@@ -151,11 +151,11 @@ def getSimilarWords(keyword, nlp):
     top_similar_words = [words for words in top_similar_words if enchant_dict.check(words) == True]
 
     return ", ".join(top_similar_words)
-	keywords = ['label', 'package']
- 	similar_keywords = getSimilarWords(keywords, nlp)
+    keywords = ['label', 'package']
+    similar_keywords = getSimilarWords(keywords, nlp)
 
-	from spacy.matcher import PhraseMatcher
-	from scipy import spatial
+    from spacy.matcher import PhraseMatcher
+    from scipy import spatial
 
 # method for searching keyword from the text
 def search_for_keyword(keyword, doc_obj, nlp):
