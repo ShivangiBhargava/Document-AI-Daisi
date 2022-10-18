@@ -5,7 +5,7 @@ st.sidebar.success("Select a pdf to perform operation.")
 d = st.date_input(
     "Do you know today's date?",
     datetime.date(2019, 7, 6))
-st.sidebar.write('Today is:', d)
+st.write('Today is:', d)
 st.markdown(
         """
         Intelligent Document Search App is related to Natural Language Processing: 
