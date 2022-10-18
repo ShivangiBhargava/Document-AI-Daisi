@@ -1,6 +1,5 @@
 import streamlit as st 
-import spacy
-import PyPDF2
+
 def intro():
     st.write("# Welcome to Intelligent Document Search App! 👋")
     st.write(
