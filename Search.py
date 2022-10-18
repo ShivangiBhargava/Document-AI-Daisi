@@ -1,8 +1,7 @@
 import streamlit as st 
 
-def intro():
-    st.write("# Welcome to Intelligent Document Search App! 👋")
-    st.write(
+st.write("# Welcome to Intelligent Document Search App! 👋")
+st.write(
         """
         Intelligent Document Search App is related to Natural Language Processing: Intelligent Search through
         text using Spacy and Python
