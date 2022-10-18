@@ -9,7 +9,7 @@ st.markdown(
         
        ➔ Extract useful information from text using Python and Machine Learning
 
-       **Searching through text is one of the key focus area of Machine Learning Applications in the field of Natural Language..!
+       **👈Searching through text is one of the key focus area of Machine Learning Applications in the field of Natural Language..!
 
        ### ➔ But what if we have to search for multiple keywords from a large document (100+ pages).💡💭
        ### ➔ Also, what if we have do a contextual search (searching for similar meaning keywords) with in our document!🤔
@@ -20,8 +20,8 @@ st.markdown(
        (or in case of contextual search, it will not be able to find any meaning text)..
      
        ### That’s why this project will be very useful❤️!!
-       """
-       )
+   """
+   )
 uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
 if uploaded_file is not None:
     df = extract_data(uploaded_file)
@@ -48,6 +48,17 @@ def search_for_keyword(keyword, doc_obj, nlp):
         text = nlp.vocab.strings[match_id]
         span = doc_obj[start: end]
         matched_text.append(span.sent.text)
+
+ choice = st.radio(
+    "What's your file format?",
+    ('PDF', 'Doc', 'Excel'))
+
+if genre == 'PDF':
+    st.write('You selected PDF.')
+else:
+    st.write("You didn't selected PDF🥺. Kindly select pdf because it only supports pdf format.")
+
+
 st.success("Built with Streamlit😊")
 st.info(" 🎉 @Shivangi on Daisi platform")
 st.text("By Shivangi Bhargava")
