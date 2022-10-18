@@ -1,7 +1,8 @@
 import streamlit as st 
-
+from datetime import datetime
 st.write("# Welcome to Intelligent Document Search App! 👋")
-st.write(
+st.sidebar.success("Select a pdf to perform operation.")
+st.markdown(
         """
         Intelligent Document Search App is related to Natural Language Processing: 
         Intelligent Search through text using Spacy and Python.
