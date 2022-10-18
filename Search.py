@@ -49,11 +49,11 @@ def search_for_keyword(keyword, doc_obj, nlp):
         span = doc_obj[start: end]
         matched_text.append(span.sent.text)
 
- choice = st.radio(
+choice = st.radio(
     "What's your file format?",
     ('PDF', 'Doc', 'Excel'))
 
-if genre == 'PDF':
+if choice == 'PDF':
     st.write('You selected PDF.')
 else:
     st.write("You didn't selected PDF🥺. Kindly select pdf because it only supports pdf format.")
