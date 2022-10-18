@@ -14,13 +14,21 @@ st.write(
      ➔ Also, what if we have do a contextual search (searching for similar meaning keywords) with in our document!🤔💭
 
 
- - The conventional ‘CTRL + F’ solution would either take 
-   long long hours to accomplish this task (or in case of contextual search, it 
-   will not be able to find any meaning text)..
+     - The conventional ‘CTRL + F’ solution would either take long long hours to accomplish this task (or in case of contextual search, 
+     it will not be able to find any meaning text)..
 
      ### That’s why this project will be very useful❤️!!
 """)
-
+uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
+if uploaded_file is not None:
+    df = extract_data(uploaded_file)
+def extract_data(feed):
+    data = []
+    with pdfplumber.load(feed) as pdf:
+        pages = pdf.pages
+        for p in pages:
+            data.append(p.extract_tables())
+    return None
 from spacy.matcher import PhraseMatcher
 from scipy import spatial
 
@@ -39,4 +47,4 @@ def search_for_keyword(keyword, doc_obj, nlp):
         matched_text.append(span.sent.text)
 st.success("Built with Streamlit😊")
 st.info(" @Shivangi on Daisi platform")
-st.text("By Shivangi Bhargava)")
+st.text("By Shivangi Bhargava)"
