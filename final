@@ -1,8 +1,53 @@
+import streamlit as st 
+
 import spacy
 import PyPDF2
+def intro():
+    import streamlit as st
 
+    st.write("# Welcome to Intelligent Document Search App! 👋")
+     st.markdown(
+        """
+        Intelligent Document Search App is related to Natural Language Processing: Intelligent Search through
+        text using Spacy and Python
+        ➔ Extract useful information from text using Python and Machine Learning
+
+
+        **Searching through text is one of the key focus
+area of Machine Learning Applications in the
+field of Natural Language..!
+
+        ### ➔ But what if we have to search for multiple keywords from a large document (100+ pages).💡
+            ➔ Also, what if we have do a contextual search (searching for similar meaning keywords) with in our document!🤔💭
+
+
+        - The conventional ‘CTRL + F’ solution would either take 
+           long long hours to accomplish this task (or in case of contextual search, it 
+            will not be able to find any meaning text)
+
+        ### That’s why this project will be very useful❤️!!
+
+        
 # spacy english model (large)
 nlp = spacy.load('en_core_web_lg')
+
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+    # To read file as bytes:
+    bytes_data = uploaded_file.getvalue()
+    st.write(bytes_data)
+
+    # To convert to a string based IO:
+    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+    st.write(stringio)
+
+    # To read file as string:
+    string_data = stringio.read()
+    st.write(string_data)
+
+    # Can be used wherever a "file-like" object is accepted:
+    dataframe = pd.read_csv(uploaded_file)
+    st.write(dataframe)
 
 # method for reading a pdf file
 def readPdfFile(filename, folder_name):
@@ -111,3 +156,24 @@ def getSimilarWords(keyword, nlp):
   
  keywords = ['label', 'package']
  similar_keywords = getSimilarWords(keywords, nlp)
+
+from spacy.matcher import PhraseMatcher
+from scipy import spatial
+
+# method for searching keyword from the text
+def search_for_keyword(keyword, doc_obj, nlp):
+    phrase_matcher = PhraseMatcher(nlp.vocab)
+    phrase_list = [nlp(keyword)]
+    phrase_matcher.add("Text Extractor", None, *phrase_list)
+
+    matched_items = phrase_matcher(doc_obj)
+
+    matched_text = []
+    for match_id, start, end in matched_items:
+        text = nlp.vocab.strings[match_id]
+        span = doc_obj[start: end]
+        matched_text.append(span.sent.text)
+        
+        st.success("Built with Streamlit😊")
+		st.info(" @Shivangi on Daisi platform")
+		st.text("By Shivangi Bhargava)")
