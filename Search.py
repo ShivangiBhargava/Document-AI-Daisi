@@ -1,5 +1,6 @@
 import streamlit as st 
-
+import spacy
+import PyPDF2
 def intro():
     st.write("# Welcome to Intelligent Document Search App! 👋")
     st.write(
@@ -24,9 +25,6 @@ field of Natural Language..!
         ### That’s why this project will be very useful❤️!!
 """)
 
-import spacy
-import PyPDF2
-        
 # spacy english model (large)
 nlp = spacy.load('en_core_web_lg')
 
