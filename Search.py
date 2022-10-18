@@ -2,6 +2,10 @@ import streamlit as st
 from datetime import datetime
 st.write("# Welcome to Intelligent Document Search App! 👋")
 st.sidebar.success("Select a pdf to perform operation.")
+d = st.date_input(
+    "Do you know today's date?",
+    datetime.date(2019, 7, 6))
+st.sidebar.write('Today is:', d)
 st.markdown(
         """
         Intelligent Document Search App is related to Natural Language Processing: 
@@ -54,12 +58,12 @@ choice = st.radio(
     ('PDF', 'Doc', 'Excel'))
 
 if choice == 'PDF':
-    st.write('You selected PDF.')
+    st.write('You selected PDF😀.')
 else:
     st.write("You didn't selected PDF🥺. Kindly select pdf because it only supports pdf format.")
 
-number = st.slider('How many keywords you want to search in the uploaded pdf?', 0, 130, 25)
-st.write("You will get results for ", number, 'keywords soon')
+number = st.slider('How many keywords you want to search in the uploaded pdf?', 0, 50, 22)
+st.write("You will get results for ", number, 'keywords soon! Have patience⏳')
 
 
 st.success("Built with Streamlit😊")
