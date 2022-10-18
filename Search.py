@@ -15,9 +15,7 @@ st.markdown(
        ### ➔ Also, what if we have do a contextual search (searching for similar meaning keywords) with in our document!🤔
 
 
-       - The conventional ‘CTRL + F’ solution would either 
-       take long long hours to accomplish this task 
-       (or in case of contextual search, it will not be able to find any meaning text)..
+       - The conventional ‘CTRL + F’ solution would either take long long hours to accomplish this task (or in case of contextual search, it will not be able to find any meaning text)..
      
        ### That’s why this project will be very useful❤️!!
    """
