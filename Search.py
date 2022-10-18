@@ -47,4 +47,4 @@ def search_for_keyword(keyword, doc_obj, nlp):
         matched_text.append(span.sent.text)
 st.success("Built with Streamlit😊")
 st.info(" @Shivangi on Daisi platform")
-st.text("By Shivangi Bhargava)"
+st.text("By Shivangi Bhargava")
