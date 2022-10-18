@@ -58,7 +58,12 @@ if choice == 'PDF':
 else:
     st.write("You didn't selected PDF🥺. Kindly select pdf because it only supports pdf format.")
 
+number = st.slider('How many keywords you want to search in the uploaded pdf?', 0, 130, 25)
+st.write("You will get results for ", number, 'keywords soon')
+
 
 st.success("Built with Streamlit😊")
 st.info(" 🎉 @Shivangi on Daisi platform")
+
+
 st.text("By Shivangi Bhargava")
