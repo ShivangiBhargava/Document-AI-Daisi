@@ -1,3 +1,5 @@
+Daisi Username - shivangi-bhargava
+Hackerearth Team Name - Mind Installers
 # Document-AI-Daisi
 Extract useful information from text using Python and Machine Learning.
 Searching through text is one of the key focus areas of Machine Learning Applications in the field of Natural Language.
