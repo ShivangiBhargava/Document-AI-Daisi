@@ -1,3 +1,7 @@
+import streamlit as st 
+from datetime import datetime
+st.write("# Welcome to Intelligent Document Search App! 👋")
+st.sidebar.success("Select a pdf to perform operation.")
 
 from spacy.matcher import PhraseMatcher
 from scipy import spatial
